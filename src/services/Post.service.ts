@@ -1,5 +1,5 @@
-import PostInterface from "../interfaces/Post.interface";
 import PostModel from "../models/Post.model";
+import { InputPostInterface } from "../interfaces/Post.interface";
 
 class PostService {
     public async getAllPosts() {
@@ -14,11 +14,11 @@ class PostService {
         return PostModel.findOne({title})
     }
 
-    public async createPost(dataNewPost:PostInterface){
+    public async createPost(dataNewPost:InputPostInterface){
         return PostModel.create(dataNewPost)
     }
 
-    public async updatePost(id:number,dataUpdatePost: PostInterface){
+    public async updatePost(id:number,dataUpdatePost: InputPostInterface){
         return PostModel.updateOne({id},{data:dataUpdatePost})
     }
 

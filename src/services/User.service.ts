@@ -1,5 +1,6 @@
-import UserInterface from "../interfaces/User.interface";
+import {InputUserInterface} from "../interfaces/User.interface";
 import UserModel from "../models/Post.model";
+
 
 class UserService {
     public async getAllUsers() {
@@ -14,11 +15,11 @@ class UserService {
        return UserModel.findOne({email})
     }
 
-    public async createUser(userData:UserInterface){
+    public async createUser(userData:InputUserInterface){
         return UserModel.create(userData)
     }
 
-    public async updateUser(id:number,userDataUpdate:Partial<UserInterface>){
+    public async updateUser(id:number,userDataUpdate:InputUserInterface){
         return UserModel.findOneAndUpdate({id},userDataUpdate, {new:true})
     }
 

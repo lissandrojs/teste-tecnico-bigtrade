@@ -14,9 +14,6 @@ app.use("/users",routerUser)
 app.use("posts",routerPost)
 
 
-
-
-
 const server = app.listen(PORT, () => console.log(
   `Server is running on PORT: ${PORT}`,
 ));
